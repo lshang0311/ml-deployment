@@ -1,0 +1,15 @@
+artifact_uri: file:///home/lshang/work.github/lshang0311/ml-deployment/mflow-examples/mlruns/0/7c7b3be169eb4771a04136c0a96df2bd/artifacts
+end_time: 1703590724302
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7c7b3be169eb4771a04136c0a96df2bd
+run_name: stately-croc-107
+run_uuid: 7c7b3be169eb4771a04136c0a96df2bd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1703590722789
+status: 3
+tags: []
+user_id: lshang
