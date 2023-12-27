@@ -65,6 +65,20 @@ docker run -p 8000:8000 fastapi-model-server:v1.0
 ```
 And test with the same curl command as above.
 
+- Build the image for the Streamlit app
+```commandline
+cd streamlit-app
+docker build -t streamlit-app:v1.0 .
+```
+
+- Docker Compose
+```commandline
+docker-compose up
+```
+
+### Deploy to Kubernetes 
+TODO
+
 ## Ref
 - [MLflow](https://mlflow.org/)
 - [End-to-End ML Deployment](https://medium.com/@bragadeeshs/end-to-end-machine-learning-deployment-from-model-building-to-kubernetes-scaling-with-mlflow-614a47a26386)

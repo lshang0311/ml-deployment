@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import json
+import os
 
 # Define the Streamlit app title and description
 st.title("Machine Learning Model Deployment")
@@ -24,7 +25,8 @@ if st.button("Predict"):
     }
 
     # Make a POST request to the FastAPI model
-    model_url = "http://127.0.0.1:8000/predict/"  # FastAPI model URL
+    model_url = os.getenv("FASTAPI_URL", "http://127.0.0.1:8000") + "/predict/"
+
     response = requests.post(model_url, json=input_data)
 
     if response.status_code == 200:
