@@ -75,6 +75,7 @@ docker build -t streamlit-app:v1.0 .
 ```commandline
 docker-compose up
 ```
+TODO: fix the file path in docker-compose.yml for the streamlit app and FastAPI server.
 
 ### Deploy to Kubernetes 
 TODO
