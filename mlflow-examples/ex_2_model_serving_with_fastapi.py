@@ -2,8 +2,17 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import mlflow.sklearn
 import uvicorn
+import os
 
-model = mlflow.sklearn.load_model("runs:/7c7b3be169eb4771a04136c0a96df2bd/model")
+# Check if running in Docker
+if os.getenv("RUNNING_IN_DOCKER") == "true":
+    # Load model from local path inside Docker container
+    model = mlflow.sklearn.load_model("./model")
+else:
+    # Load model from MLflow run
+    model = mlflow.sklearn.load_model(
+        "runs:/7c7b3be169eb4771a04136c0a96df2bd/model"
+    )
 
 app = FastAPI()
 
