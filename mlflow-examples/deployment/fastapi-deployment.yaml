@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-deployment
+spec:
+  replicas: 1  # Number of replicas
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+      - name: fastapi
+        image: fastapi-model-server:v1.0  # Replace with your Docker image
+        ports:
+        - containerPort: 8000  # The port your FastAPI app listens on
