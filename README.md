@@ -154,6 +154,7 @@ REPOSITORY                                TAG       IMAGE ID       CREATED      
 fastapi-model-server                      v1.0      1ced82f99552   4 seconds ago   1.79GB
 ```
 
+Apply the configuration:
 ```commandline
 kubectl apply -f fastapi-deployment.yaml
 ```
@@ -169,6 +170,7 @@ NAME                                  READY   STATUS    RESTARTS   AGE
 fastapi-deployment-5f447f59d9-5ntxt   1/1     Running   0          57m
 ```
 
+Access the service by url:
 ```commandline
 cd deployment
 minikube service fastapi-service --url
@@ -180,7 +182,7 @@ output:
 http://123.456.789.1:30879
 ```
 
-Request:
+Request using the url:
 
 ```commandline
 curl -X POST "http://123.456.789.1:30879/predict/" -H "accept: application/json" -H "Content-Type: application/json" -d '{"feature1": 5.1, "feature2": 3.5, "feature3": 1.4, "feature4": 0.2}'
