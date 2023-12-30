@@ -197,7 +197,7 @@ minikube service fastapi-service --url
 output:
 
 ```text
-http://123.456.789.1:30879
+http://192.168.49.2:30129
 ```
 
 Request using the url:
