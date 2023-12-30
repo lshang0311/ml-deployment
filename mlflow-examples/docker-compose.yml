@@ -12,7 +12,7 @@ services:
     ports:
       - "8501:8501"
     environment:
-      - FASTAPI_URL=http://fastapi:8000
+      - FASTAPI_URL=http://192.168.49.2:30879
     networks:
       - my_network
 

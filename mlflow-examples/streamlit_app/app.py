@@ -25,7 +25,7 @@ if st.button("Predict"):
     }
 
     # Make a POST request to the FastAPI model
-    model_url = os.getenv("FASTAPI_URL", "http://127.0.0.1:8000") + "/predict/"
+    model_url = "http://192.168.49.2:30879" + "/predict/"  # for minikube. TODO: generalize
 
     response = requests.post(model_url, json=input_data)
 

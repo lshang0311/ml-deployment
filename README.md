@@ -135,7 +135,9 @@ NAME       STATUS   ROLES           AGE   VERSION
 minikube   Ready    control-plane   30m   v1.28.3
 ```
 
-- Deploying an Application (WIP)
+- Deploying an Application - FastAPI
+
+```commandline 
 
 ```commandline
 cd mlflow-examples
@@ -155,6 +157,7 @@ fastapi-model-server                      v1.0      1ced82f99552   4 seconds ago
 ```
 
 Apply the configuration:
+
 ```commandline
 kubectl apply -f fastapi-deployment.yaml
 ```
@@ -171,6 +174,7 @@ fastapi-deployment-5f447f59d9-5ntxt   1/1     Running   0          57m
 ```
 
 Access the service by url:
+
 ```commandline
 cd deployment
 minikube service fastapi-service --url
@@ -192,6 +196,26 @@ output:
 
 ```text
 {"prediction":0.0}
+```
+
+- Deploying an Application - Streamlit
+
+```commandline
+cd streamlit-app
+eval $(minikube docker-env)
+docker build -t streamlit-app:v1.0 .
+``` 
+
+```commandline
+cd deployment
+kubectl apply -f streamlit-deployment.yaml
+kubectl apply -f streamlit-service.yaml
+```
+
+Access the service by url:
+
+```commandline
+minikube service streamlit-service --url
 ```
 
 ## Ref
