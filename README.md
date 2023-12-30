@@ -94,6 +94,20 @@ TODO: fix the file path in docker-compose.yml for the streamlit app and FastAPI 
 ```commandline
 eksctl create cluster --name ex-eks-cluster --region ap-southeast-2
 ```
+A cost-effective cluster can be created with the following command:
+```commandline
+eksctl create cluster \
+  --name ex-eks-cluster \
+  --region ap-southeast-2 \
+  --node-type t3.micro \
+  --nodes-min 1 \
+  --nodes-max 1 \
+  --managed
+```
+
+```commandline
+
+```commandline
 
 - List the nodes
 
